@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <h2>Add Tag</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit">Add Tag</button>
+  </form>
+  <a href="{% url 'tasks:tag-list' %}">Back to Tag List</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Update Tag</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Tag</button>
+  </form>
+  <a href="{% url 'tasks:tag-list' %}">Back to Tag List</a>
+{% endblock %}
